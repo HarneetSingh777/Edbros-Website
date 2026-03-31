@@ -4,13 +4,14 @@ import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SectionHeading from "@/components/SectionHeading";
+import InteractiveParallaxBackground from "@/components/InteractiveParallaxBackground";
 import {
   services,
   portfolioItems,
   testimonials,
   stats,
 } from "@/lib/data";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -48,8 +49,9 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════ SERVICES ═══════════════ */}
-      <section className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative py-24 lg:py-32 overflow-hidden bg-[#020202]">
+        <InteractiveParallaxBackground />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <AnimatedSection>
             <SectionHeading
               label="Services"

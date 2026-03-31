@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { Application } from '@splinetool/runtime';
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeading from "@/components/SectionHeading";
 import { generateRequestId } from "@/lib/utils";
@@ -62,10 +63,21 @@ const initialFormData: FormData = {
 };
 
 export default function StartProjectPage() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      const app = new Application(canvasRef.current);
+      app.load('https://prod.spline.design/H1O1SpueSyQZPzH8/scene.splinecode');
+    }
+  }, []);
+
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
   const [requestId, setRequestId] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const totalSteps = 4;
 
@@ -76,11 +88,39 @@ export default function StartProjectPage() {
   const next = () => setStep((s) => Math.min(s + 1, totalSteps));
   const prev = () => setStep((s) => Math.max(s - 1, 1));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
     const id = generateRequestId();
     setRequestId(id);
-    setSubmitted(true);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...form, requestId: id }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Something went wrong');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitError(
+        error instanceof Error 
+          ? error.message 
+          : 'Failed to submit. Please try again.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputClass =
@@ -109,8 +149,16 @@ export default function StartProjectPage() {
               </p>
               <p className="text-2xl font-bold text-white font-mono">{requestId}</p>
             </div>
-            <p className="text-[#666] text-sm">
-              Save this ID for your records. You&apos;ll also receive a confirmation email.
+            <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#6c5ce7]/10 border border-[#6c5ce7]/20 mb-4 max-w-md mx-auto">
+              <svg className="w-4 h-4 text-[#6c5ce7] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <p className="text-sm text-[#aaa]">
+                A confirmation email with your request ID has been sent to <span className="text-[#ccc] font-medium">{form.email}</span>
+              </p>
+            </div>
+            <p className="text-[#555] text-xs">
+              Didn&apos;t receive it? Check your spam folder or contact us at contact@edbros.com
             </p>
           </div>
         </AnimatedSection>
@@ -120,11 +168,26 @@ export default function StartProjectPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-8 overflow-hidden">
-        <div className="absolute top-20 left-1/4 w-[400px] h-[300px] rounded-full bg-[#6c5ce7]/8 blur-[120px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <AnimatedSection>
+      {/* Full Screen Spline Background */}
+      <canvas id="canvas3d" ref={canvasRef} className="fixed inset-0 w-full h-full z-0 block"></canvas>
+
+      {/* Fallback Block to hide embedded Spline logo */}
+      <div className="fixed bottom-2 right-4 w-[160px] h-[55px] bg-[#050505] z-[5] pointer-events-none rounded-lg flex items-center justify-center">
+        <span 
+          style={{ fontFamily: "'Instrument Serif', serif" }} 
+          className="text-white/70 italic text-[28px] tracking-wide select-none pb-1"
+        >
+          edbros
+        </span>
+      </div>
+
+      {/* Main Content Overlay */}
+      <div className="relative z-10 flex flex-col pointer-events-none">
+        {/* Hero */}
+        <section className="relative pt-32 pb-8 overflow-hidden pointer-events-auto">
+          <div className="absolute top-20 left-1/4 w-[400px] h-[300px] rounded-full bg-[#6c5ce7]/8 blur-[120px] pointer-events-none" />
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <AnimatedSection>
             <SectionHeading
               label="Start a Project"
               title="Let's build something great"
@@ -135,7 +198,7 @@ export default function StartProjectPage() {
       </section>
 
       {/* Form */}
-      <section className="pb-32">
+      <section className="pb-32 pointer-events-auto">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <AnimatedSection>
             {/* Progress */}
@@ -424,6 +487,28 @@ export default function StartProjectPage() {
                 </div>
               )}
 
+              {/* Error Banner */}
+              {submitError && (
+                <div className="mt-6 flex items-start gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+                  <svg className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <div className="flex-1">
+                    <p className="text-sm text-red-300 font-medium">Submission failed</p>
+                    <p className="text-xs text-red-400/70 mt-1">{submitError}</p>
+                  </div>
+                  <button 
+                    type="button" 
+                    onClick={() => setSubmitError("")}
+                    className="text-red-400/50 hover:text-red-400 transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              )}
+
               {/* Navigation */}
               <div className="flex items-center justify-between mt-10 pt-8 border-t border-white/5">
                 {step > 1 ? (
@@ -451,10 +536,11 @@ export default function StartProjectPage() {
                 ) : (
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#6c5ce7] to-[#00cec9] text-white text-sm font-semibold hover:opacity-90 transition-all duration-300 hover:scale-105"
+                    disabled={isSubmitting}
+                    className={`inline-flex items-center gap-2 px-8 py-3 rounded-full bg-gradient-to-r from-[#6c5ce7] to-[#00cec9] text-white text-sm font-semibold transition-all duration-300 ${isSubmitting ? 'opacity-70 cursor-wait' : 'hover:opacity-90 hover:scale-105'}`}
                   >
-                    <Sparkles className="w-4 h-4" />
-                    Submit Project
+                    <Sparkles className={`w-4 h-4 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                    {isSubmitting ? 'Submitting...' : 'Submit Project'}
                   </button>
                 )}
               </div>
@@ -462,6 +548,7 @@ export default function StartProjectPage() {
           </AnimatedSection>
         </div>
       </section>
+      </div>
     </>
   );
 }

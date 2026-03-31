@@ -32,7 +32,7 @@ export default function CaseStudiesPage() {
       {/* Case Studies */}
       <section className="pb-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-16">
-          {caseStudies.map((study, index) => (
+          {caseStudies.map((study) => (
             <AnimatedSection key={study.id}>
               <div className="rounded-3xl border border-white/5 bg-[#111] overflow-hidden transition-all duration-500 hover:border-white/10">
                 <div className="grid lg:grid-cols-2">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+
 import AnimatedSection from "@/components/AnimatedSection";
 import PortfolioCard from "@/components/PortfolioCard";
 import SectionHeading from "@/components/SectionHeading";

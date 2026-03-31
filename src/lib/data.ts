@@ -180,7 +180,7 @@ export const testimonials: Testimonial[] = [
     company: "FitLife",
     quote:
       "Edbros transformed our social media presence. Our engagement rate tripled and we gained over 50K followers in just 3 months.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&q=80",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
     id: "2",
@@ -286,7 +286,7 @@ export const teamMembers = [
   {
     name: "Priya Sharma",
     role: "Lead Video Editor",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
     bio: "Specializes in short-form viral content. 500M+ cumulative views.",
   },
   {

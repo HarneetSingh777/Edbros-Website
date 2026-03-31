@@ -21,7 +21,8 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 	} | null>(null);
 
 	useEffect(() => {
-		if (!containerRef.current) return;
+		const container = containerRef.current;
+		if (!container) return;
 
 		const SEPARATION = 150;
 		const AMOUNTX = 40;
@@ -47,10 +48,9 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor(scene.fog.color, 0);
 
-		containerRef.current.appendChild(renderer.domElement);
+		container.appendChild(renderer.domElement);
 
 		// Create particles
-		const particles: THREE.Points[] = [];
 		const positions: number[] = [];
 		const colors: number[] = [];
 
@@ -119,7 +119,7 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 
 			// Update point sizes based on wave
 			const customMaterial = material as THREE.PointsMaterial & {
-				uniforms?: any;
+				uniforms?: Record<string, unknown>;
 			};
 			if (!customMaterial.uniforms) {
 				// For dynamic size changes, we'd need a custom shader
@@ -173,8 +173,8 @@ export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
 
 				sceneRef.current.renderer.dispose();
 
-				if (containerRef.current && sceneRef.current.renderer.domElement) {
-					containerRef.current.removeChild(
+				if (container && sceneRef.current.renderer.domElement) {
+					container.removeChild(
 						sceneRef.current.renderer.domElement,
 					);
 				}

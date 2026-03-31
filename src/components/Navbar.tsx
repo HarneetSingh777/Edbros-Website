@@ -19,8 +19,8 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="logoisum-nav__logo">
           <svg className="logoisum-nav__logo-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="28" height="28" rx="6" fill="#222" />
-            <path d="M8 20V8h2.5v10H17v2H8z" fill="#fff" />
+            <rect width="28" height="28" rx="6" fill="#fff" />
+            <path d="M8 20V8H17v2H10.5V13H16v2H10.5V18H17v2Z" fill="#222" />
           </svg>
           <span className="logoisum-nav__logo-text">Edbros</span>
         </Link>
