@@ -278,34 +278,34 @@ export const caseStudies: CaseStudy[] = [
 
 export const teamMembers = [
   {
-    name: "Alex Morgan",
+    name: "Rijak Singh",
     role: "Founder & Creative Director",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
-    bio: "10+ years in digital media. Former creative lead at a top agency.",
+    bio: "5+ years in digital media. Former creative lead at a top agency.",
   },
   {
-    name: "Priya Sharma",
-    role: "Lead Video Editor",
+    name: "Harneet Singh",
+    role: "Video Editor & Web Designer",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
-    bio: "Specializes in short-form viral content. 500M+ cumulative views.",
+    bio: "Specializes in short-form viral content.",
   },
   {
-    name: "David Kim",
-    role: "Motion Designer",
+    name: "Anubhav Vashisht",
+    role: "Social Media Management",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-    bio: "Award-winning motion designer with a passion for storytelling.",
+    bio: "Manages Social Media Handles for creators and Brand",
   },
   {
-    name: "Luna Martinez",
-    role: "Social Media Strategist",
+    name: "Yashika Bhatnagar",
+    role: "Graphic Designer",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
-    bio: "Data-driven strategist who's managed 50+ brand accounts.",
+    bio: "Creates stunning visuals for brands and creators",
   },
 ];
 
 export const stats = [
-  { value: "150+", label: "Projects Delivered" },
-  { value: "50+", label: "Happy Clients" },
-  { value: "10M+", label: "Views Generated" },
-  { value: "98%", label: "Client Retention" },
+  { value: "10+", label: "Projects Delivered" },
+  { value: "10+", label: "Happy Clients" },
+  { value: "100K+", label: "Views Generated" },
+  { value: "80%+", label: "Client Retention" },
 ];
