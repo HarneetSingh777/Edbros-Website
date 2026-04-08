@@ -292,7 +292,7 @@ export const teamMembers = [
   {
     name: "Anubhav Vashisht",
     role: "Social Media Management",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+    image: "/anubhav-vashisht.jpg",
     bio: "Manages Social Media Handles for creators and Brand",
   },
   {
