@@ -169,7 +169,6 @@ export interface Testimonial {
   role: string;
   company: string;
   quote: string;
-  image: string;
 }
 
 export const testimonials: Testimonial[] = [
@@ -180,7 +179,7 @@ export const testimonials: Testimonial[] = [
     company: "Yogesh Dhall Astrology",
     quote:
       "Edbros transformed our social media presence. Our engagement rate dobled and we gained over 300 followers in just 2 months.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
+
   },
   {
     id: "2",
@@ -189,7 +188,7 @@ export const testimonials: Testimonial[] = [
     company: "Fitlife",
     quote:
       "The brand identity they created perfectly captures our vision. Professional, creative, and incredibly responsive team.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+
   },
   {
     id: "3",
@@ -198,7 +197,7 @@ export const testimonials: Testimonial[] = [
     company: "",
     quote:
       "My YouTube channel exploded after working with Edbros. Their editing quality is unmatched and they truly understand storytelling.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+
   },
   {
     id: "4",
@@ -207,7 +206,7 @@ export const testimonials: Testimonial[] = [
     company: "SinghEats",
     quote:
       "From strategy to execution, Edbros delivers. They're not just a vendor — they're a true creative partner.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
+
   },
 ];
 

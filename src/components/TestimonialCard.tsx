@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Quote } from "lucide-react";
 
 interface TestimonialCardProps {
@@ -6,7 +5,6 @@ interface TestimonialCardProps {
   role: string;
   company: string;
   quote: string;
-  image: string;
 }
 
 export default function TestimonialCard({
@@ -14,7 +12,6 @@ export default function TestimonialCard({
   role,
   company,
   quote,
-  image,
 }: TestimonialCardProps) {
   return (
     <div className="relative rounded-2xl border border-white/5 bg-[#111] p-8 transition-all duration-500 hover:border-white/10 hover:bg-[#141414]">
@@ -28,19 +25,13 @@ export default function TestimonialCard({
 
       {/* Author */}
       <div className="flex items-center gap-4">
-        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-white/10">
-          <Image
-            src={image}
-            alt={name}
-            fill
-            className="object-cover"
-            sizes="48px"
-          />
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6c5ce7] to-[#00cec9] flex items-center justify-center text-white font-bold text-sm">
+          {name.charAt(0)}
         </div>
         <div>
           <p className="text-white font-semibold text-sm">{name}</p>
           <p className="text-[#666] text-xs">
-            {role} at {company}
+            {role}{company ? ` at ${company}` : ""}
           </p>
         </div>
       </div>

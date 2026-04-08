@@ -152,7 +152,6 @@ export default function HomePage() {
                   role={testimonial.role}
                   company={testimonial.company}
                   quote={testimonial.quote}
-                  image={testimonial.image}
                 />
               </AnimatedSection>
             ))}
