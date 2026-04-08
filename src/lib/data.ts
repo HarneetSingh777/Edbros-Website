@@ -286,7 +286,7 @@ export const teamMembers = [
   {
     name: "Preet Singh",
     role: "Video Editor & Web Designer",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
+    image: "/preet-singh.jpg",
     bio: "Specializes in short-form viral content.",
   },
   {
