@@ -250,7 +250,7 @@ export const caseStudies: CaseStudy[] = [
     solution:
       "We designed a futuristic brand identity system — logo, color palette, typography, social templates, and a comprehensive brand guideline deck.",
     results: [
-      { metric: "Brand Recognition", value: "+180%" },
+      { metric: "Brand Recognition", value: "+75%" },
       { metric: "Website Traffic", value: "+95%" },
       { metric: "Lead Quality", value: "+60%" },
       { metric: "Client Perception", value: "Premium" },
@@ -258,19 +258,19 @@ export const caseStudies: CaseStudy[] = [
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
   },
   {
-    id: "mindful-youtube",
-    title: "Building a YouTube Empire",
-    client: "Mindful Living",
+    id: "Yogesh Dhall ",
+    title: "Building a social media Empire",
+    client: "Yogesh Dhall",
     service: "Long Form Video Editing",
     challenge:
-      "Aisha had incredible content ideas but lacked the editing skills to produce professional-quality videos consistently.",
+      "Yogesh Dhall had incredible content ideas but lacked the editing skills to produce professional-quality videos consistently.",
     solution:
-      "We produced a 10-episode series with cinematic editing, custom motion graphics, professional color grading, and optimized thumbnails.",
+      "We produced a reel package with cinematic editing, custom motion graphics, professional color grading, and optimized thumbnails.",
     results: [
-      { metric: "Subscribers", value: "5K → 120K" },
-      { metric: "Watch Time", value: "+420%" },
-      { metric: "Ad Revenue", value: "+$8K/mo" },
-      { metric: "Brand Deals", value: "6 Secured" },
+      { metric: "Subscribers", value: "0-300" },
+      { metric: "Watch Time", value: "+80%" },
+      { metric: "Ad Revenue", value: "not Disclosed" },
+      { metric: "Brand Deals", value: "Secured" },
     ],
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
   },
