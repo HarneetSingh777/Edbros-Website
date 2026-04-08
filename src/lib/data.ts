@@ -298,7 +298,7 @@ export const teamMembers = [
   {
     name: "Yashika Bhatnagar",
     role: "Graphic Designer",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
+    image: "/yashika-bhatnagar.jpg",
     bio: "Creates stunning visuals for brands and creators",
   },
 ];
