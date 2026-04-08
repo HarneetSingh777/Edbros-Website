@@ -175,18 +175,18 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    name: "Sarah Chen",
+    name: "Yogesh Dhall ",
     role: "Founder",
-    company: "FitLife",
+    company: "Yogesh Dhall Astrology",
     quote:
-      "Edbros transformed our social media presence. Our engagement rate tripled and we gained over 50K followers in just 3 months.",
+      "Edbros transformed our social media presence. Our engagement rate dobled and we gained over 300 followers in just 2 months.",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80",
   },
   {
     id: "2",
-    name: "Marcus Rivera",
-    role: "CEO",
-    company: "NovaTech",
+    name: "Saurabh",
+    role: "Founder",
+    company: "Fitlife",
     quote:
       "The brand identity they created perfectly captures our vision. Professional, creative, and incredibly responsive team.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
@@ -195,16 +195,16 @@ export const testimonials: Testimonial[] = [
     id: "3",
     name: "Aisha Patel",
     role: "Content Creator",
-    company: "Mindful Living",
+    company: "",
     quote:
       "My YouTube channel exploded after working with Edbros. Their editing quality is unmatched and they truly understand storytelling.",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
   {
     id: "4",
-    name: "Jordan Blake",
+    name: "Karandeep Singh",
     role: "Marketing Director",
-    company: "GlowUp Beauty",
+    company: "SinghEats",
     quote:
       "From strategy to execution, Edbros delivers. They're not just a vendor — they're a true creative partner.",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80",
@@ -280,7 +280,7 @@ export const teamMembers = [
   {
     name: "Rijak Singh",
     role: "Founder & Creative Director",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "/rijak-singh.jpg",
     bio: "5+ years in digital media. Former creative lead at a top agency.",
   },
   {
