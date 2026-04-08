@@ -4,7 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import { services } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
-import InteractiveParallaxBackground from "@/components/InteractiveParallaxBackground";
+import SpotlightBackground from "@/components/ui/spotlight-background";
 
 export const metadata: Metadata = {
   title: "Services — Edbros",
@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="relative min-h-screen bg-[#020202] overflow-hidden">
-      <InteractiveParallaxBackground />
+    <SpotlightBackground>
       {/* Hero */}
       <section className="relative pt-32 pb-20 z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#6c5ce7]/20 blur-[120px] pointer-events-none" />
@@ -126,6 +125,7 @@ export default function ServicesPage() {
           </AnimatedSection>
         </div>
       </section>
-    </main>
+    </SpotlightBackground>
   );
 }
+

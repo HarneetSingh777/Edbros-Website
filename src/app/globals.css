@@ -240,7 +240,7 @@ main {
   display: block;
   width: 22px;
   height: 2px;
-  background: #222;
+  background: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -376,12 +376,24 @@ main {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: #fff;
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 16px;
     padding: 24px;
     gap: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
     animation: menuDrop 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .logoisum-nav__menu .logoisum-nav__link {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+  }
+
+  .logoisum-nav__menu .logoisum-nav__link:hover {
+    color: #fff;
   }
 
   @keyframes menuDrop {
@@ -446,6 +458,68 @@ main {
     padding: 14px 28px 14px 22px;
     font-size: 15px;
   }
+}
+
+/* ═══════════════════════════════════════════════════
+   SPOTLIGHT BACKGROUND
+   ═══════════════════════════════════════════════════ */
+
+.spotlight-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #020202;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.spotlight {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.spotlight-left {
+  top: 10%;
+  left: 15%;
+  background: radial-gradient(circle, #6c5ce7 0%, transparent 70%);
+  width: 700px;
+  height: 700px;
+}
+
+.spotlight-mid {
+  top: 40%;
+  left: 45%;
+  background: radial-gradient(circle, #00cec9 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  opacity: 0.25;
+}
+
+.spotlight-right {
+  top: 15%;
+  right: 10%;
+  left: auto;
+  background: radial-gradient(circle, #a29bfe 0%, transparent 70%);
+  width: 650px;
+  height: 650px;
+  opacity: 0.3;
+}
+
+.spotlight-content {
+  position: relative;
+  z-index: 10;
 }
 
 /* Hide Spline Watermark if injected as DOM elements */

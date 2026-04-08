@@ -138,28 +138,28 @@ export const portfolioItems: PortfolioItem[] = [
     title: "YouTube Series — Mindful Living",
     category: "Long Form Video Editing",
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
-    description: "10-episode series that grew a wellness channel from 5K to 120K subs.",
+    description: "10-episode series that grew a wellness channel from 5K to 10K subs.",
   },
   {
     id: "4",
-    title: "Social Growth — GlowUp Beauty",
+    title: "Social Growth — Yogesh Dhal ",
     category: "Social Media Management",
     image: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=800&q=80",
-    description: "300% follower growth in 6 months through strategic content planning.",
+    description: "300 followers growth in 2 months.",
   },
   {
     id: "5",
-    title: "Content Roadmap — UrbanEats",
+    title: "Content Roadmap — SinghEats",
     category: "Content Strategy",
     image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80",
     description: "Full content strategy that positioned a food brand as a market leader.",
   },
   {
     id: "6",
-    title: "Reels Package — StyleVault",
+    title: "Reels Package — Tishfitness",
     category: "Short Form Video Editing",
     image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
-    description: "Monthly Reels package generating consistent 100K+ views per video.",
+    description: "Monthly Reels package generating consistent 1K+ views per video.",
   },
 ];
 
@@ -284,7 +284,7 @@ export const teamMembers = [
     bio: "5+ years in digital media. Former creative lead at a top agency.",
   },
   {
-    name: "Harneet Singh",
+    name: "Preet Singh",
     role: "Video Editor & Web Designer",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
     bio: "Specializes in short-form viral content.",
