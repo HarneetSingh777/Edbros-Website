@@ -285,7 +285,7 @@ export const teamMembers = [
   },
   {
     name: "Preet Singh",
-    role: "Video Editor & Web Designer",
+    role: "Video Editor",
     image: "/preet-singh.jpg",
     bio: "Specializes in short-form viral content.",
   },
